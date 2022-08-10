@@ -1,24 +1,44 @@
-# README
+# RoR Blog Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Ruby on Rails Blog Project.
 
-Things you may want to cover:
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails
 
-* Configuration
+## Live Demo
 
-* Database creation
+N/A
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Setup
 
-* Deployment instructions
+- Simply clone the project (for more information please check the link https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+- Run the cmd promt
+- Type "build i" for the Gemfile.lock
 
-* ...
+### Install
+
+Not required
+
+## Author
+
+👤 **Evren Ersoy**
+
+- GitHub: [https://github.com/Ewoskyx]
+- Twitter: [https://twitter.com/Ewoskyx]
+- LinkedIn: [https://www.linkedin.com/in/ewoskyx]
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
