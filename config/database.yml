@@ -3,8 +3,6 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
-
 development:
   adapter: postgresql
   encoding: unicode
@@ -13,8 +11,7 @@ development:
   username: postgres
   password: 12345
 
-
-  test:
+test:
   adapter: postgresql
   encoding: unicode
   database: my_blog2_test
@@ -22,9 +19,8 @@ development:
   username: postgres
   password: 12345
 
-
 production:
   <<: *default
   database: my_blog2_production
-  username: my_blog2
-  password: <%= ENV["MY_BLOG2_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: <%= ENV["RAILS_BLOG_APP_DATABASE_PASSWORD"] %>
