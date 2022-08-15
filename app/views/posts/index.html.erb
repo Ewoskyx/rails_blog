@@ -11,5 +11,7 @@
 
   <body>
     <h1>Here is a list of posts for a given user</h1>
-  </body>
+    <%@posts.each do |post|%>
+    <h2><%= post.text %></h2>
+    <%end%>
 </html>
