@@ -9,4 +9,5 @@
       <% end %>
     <br>
     <%= link_to "See all posts", user_posts_path(user_id: @user.id), class: "show_all_posts" %>
+    <%= link_to "Create a new post", new_user_post_path(user_id: @user.id), class: "show_all_posts" %>
 <% end %>
