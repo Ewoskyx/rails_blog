@@ -1,0 +1,5 @@
+<%= form_with model: comment, url: user_post_comments_path(post_id: params[:id]), html: { class: 'flex flex-col items-start w-full gap-4' } do |form| %>
+  <%= form.text_area :text, class: 'form_text_area2', placeholder: 'Your comment...', required: true, rows: 3%>
+  <br>
+  <%= form.submit "Comment", class:'form_submit_btn2' %>
+<% end %>

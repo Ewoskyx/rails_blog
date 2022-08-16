@@ -1,3 +1,4 @@
 <% content_for :content do %>
 <%= render partial: "post_full", locals: {post: @post} %>
+<%= render partial: 'create-comment', locals: {comment: @comment} %>
 <%end%>
