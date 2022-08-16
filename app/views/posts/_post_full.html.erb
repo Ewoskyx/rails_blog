@@ -1,0 +1,9 @@
+<div class="post_card_wrapper">
+<div class="span_wrapper">
+    <span>Comments: x</span>
+    <span>Likes: y</span>
+</div>
+<h3><%= post.title %> by <%= post.author.name %></h3>
+<p><%=post.text%></p>
+</div>
+<%= render partial: "shared/comment_card", locals: { comments: post.recent_comments } %>
