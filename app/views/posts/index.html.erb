@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>MyBlog2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-  </head>
-
-  <body>
+<% content_for :content do %>
     <h1>Here is a list of posts for a given user</h1>
-    <%@posts.each do |post|%>
-    <h2><%= post.text %></h2>
-    <%end%>
-</html>
+    <%= render partial: "shared/user_card", locals: {user: @user} %>
+    <% @posts.each do |post| %>
+      <%= link_to user_post_path(user_id: @user.id, id: post.id), class: 'post_link' do %>
+        <%= render partial: "shared/post_card", locals: {post: post} %>
+        <%= render partial: "shared/comment_card", locals: { comments: post.recent_comments } %>
+      <% end %>
+    <% end %>
+<%end%>

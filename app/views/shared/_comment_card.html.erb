@@ -1,0 +1,7 @@
+
+<%comments.each do |comment|%>
+<div class="comment_card_wrapper">
+<h4>User(<%= comment.author.name %>): </h4>
+<p><%= comment.text %></p>
+</div>
+<%end%>
