@@ -8,11 +8,11 @@ RSpec.describe Like, type: :model do
 
     it 'update_likes_counter should increment the total likes by 1' do
       like.update_likes_counter
-      expect(like.post.likes_counter).to eq 1
+      expect(like.post.likes_counter).to eq 2
     end
 
     it 'like must have a correct author' do
-      expect(Like.first.author.name).to eq 'Tom'
+      expect(like.author.name).to eq 'Tom'
     end
   end
 end
