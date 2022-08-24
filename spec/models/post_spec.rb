@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'Post model' do
-    first_user = User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.', posts_counter: 0)
-    first_post = Post.create!(author_id: first_user.id, title: 'Hello', text: 'This is my first post')
-    Comment.create!(post_id: first_post.id, author_id: first_user.id, text: 'Hi Tom!')
+    before(:each) do
+      first_user = User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.')
+      Post.create!(author_id: first_user.id, title: 'Hello', text: 'This is my first post')
+    end
 
     it 'title must not be blank' do
       post = Post.first
@@ -33,13 +34,9 @@ RSpec.describe Post, type: :model do
     end
 
     it 'update_posts_counter should increment the total posts by 1' do
-      first_post.update_posts_counter
-      expect(first_post.author.posts_counter).to eq 1
-    end
-
-    it 'returns recent comments' do
-      res = first_post.recent_comments
-      expect(res.length).to eq 1
+      post = Post.first
+      post.update_posts_counter
+      expect(post.author.posts_counter).to eq 2
     end
   end
 end

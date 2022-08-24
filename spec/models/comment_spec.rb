@@ -9,11 +9,11 @@ RSpec.describe Comment, type: :model do
 
     it 'update_comments_counter should increment the total comments by 1' do
       comment.update_comments_counter
-      expect(comment.post.comments_counter).to eq 1
+      expect(comment.post.comments_counter).to eq 2
     end
 
     it 'comment must have a correct text' do
-      expect(Comment.first.text).to eq 'Hi Tom!'
+      expect(comment.text).to eq 'Hi Tom!'
     end
   end
 end

@@ -16,10 +16,5 @@ RSpec.describe User, type: :model do
       expect(first_user).to_not be_valid
       first_user.posts_counter = 0
     end
-
-    it 'should return recent posts' do
-      first_user.recent_posts
-      expect(first_user.recent_posts.length).to eq 1
-    end
   end
 end

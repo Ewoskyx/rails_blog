@@ -15,8 +15,6 @@ class Post < ApplicationRecord
   after_save :update_posts_counter
   # A method that updates the posts counter for a user.
 
-  private
-
   def update_posts_counter
     author.increment!(:posts_counter)
   end
