@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe 'Post model' do
     before(:each) do
-      first_user = User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.')
+      first_user = User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.', email: 'to@example.com',
+                                password: 'password')
       Post.create!(author_id: first_user.id, title: 'Hello', text: 'This is my first post')
     end
 
@@ -31,12 +32,6 @@ RSpec.describe Post, type: :model do
       post = Post.first
       post.likes_counter = -1
       expect(post).to_not be_valid
-    end
-
-    it 'update_posts_counter should increment the total posts by 1' do
-      post = Post.first
-      post.update_posts_counter
-      expect(post.author.posts_counter).to eq 2
     end
   end
 end

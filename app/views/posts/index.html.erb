@@ -1,13 +1,15 @@
-<% content_for :content do %>
-    <h1>Here is a list of posts for a given user</h1>
-    <%= render partial: "shared/user_card", locals: {user: @user} %>
+<section class="">
+  <%= render partial: "users/user-header", locals: {user: @user} %>
+  <%= link_to "Create a new post", new_user_post_path, class: "text-2xl underline my-20 block hover:opacity-40" %>
+  <ul class="flex flex-col gap-20 mb-20">
     <% @posts.each do |post| %>
-      <%= link_to user_post_path(user_id: @user.id, id: post.id), class: 'post_link' do %>
-        <%= render partial: "shared/post_card", locals: {post: post} %>
-        <%= render partial: "shared/comment_card", locals: { comments: post.recent_comments } %>
+      <%= link_to user_post_path(user_id: @user.id, id: post.id), class: 'hover:opacity-40' do %>
+        <%= render partial: "post-preview", locals: {post: post} %>
+        <%= render partial: "comments", locals: { comments: post.recent_comments } %>
       <% end %>
     <% end %>
-    <div>
+  </ul>
+  <div>
     <button class="underline">next page</button>
   </div>
-<%end%>
+</section>
