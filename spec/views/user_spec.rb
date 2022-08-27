@@ -1,8 +1,12 @@
 RSpec.describe 'Testing users views', type: :feature do
-  describe 'users#index views' do
+  describe 'user#index views' do
     before(:each) do
-      User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.')
-      visit '/'
+      User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.', email: 'to@example.com',
+                   password: 'password', confirmed_at: Time.now)
+      visit user_session_path
+      fill_in 'Email',	with: 'to@example.com'
+      fill_in 'Password',	with: 'password'
+      click_on 'Log in'
     end
 
     it 'I can see the username of all other users.' do
@@ -25,9 +29,14 @@ RSpec.describe 'Testing users views', type: :feature do
 
   describe 'users#show views' do
     before(:each) do
-      first_user = User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.')
+      first_user = User.create!(name: 'Tom', photo: 'photo.jpg', bio: 'Teacher from Mexico.', email: 'to@example.com',
+                                password: 'password', confirmed_at: Time.now)
       (1..5).each { |i| first_user.posts.create title: "Post number #{i}", text: "This is my #{i} post!" }
-      visit "/users/#{first_user.id}"
+      visit user_session_path
+      fill_in 'Email',	with: 'to@example.com'
+      fill_in 'Password',	with: 'password'
+      click_on 'Log in'
+      visit user_path first_user.id
     end
 
     it "I can see the user's profile picture." do
