@@ -1,6 +1,6 @@
 # RoR Blog Project
 
-> Ruby on Rails Blog Project.
+> This is a fully functional blogging websites, where users can create an account, post their blogs and interact with each other by liking and commenting on others posts.
 
 
 ## Built With
@@ -25,13 +25,19 @@ To get a local copy up and running follow these simple example steps.
 
 Not required
 
-## Author
+## Authors
 
 👤 **Evren Ersoy**
 
 - GitHub: [https://github.com/Ewoskyx]
 - Twitter: [https://twitter.com/Ewoskyx]
 - LinkedIn: [https://www.linkedin.com/in/ewoskyx]
+
+👤 **Eid Hachem**
+
+- GitHub: [@EidHachem](https://github.com/EidHachem)
+- Twitter: [@eidHachem1](https://twitter.com/@eidHachem1)
+- LinkedIn: [Eid Hachem](https://www.linkedin.com/in/eid-hachem/)
 
 ## Show your support
 
